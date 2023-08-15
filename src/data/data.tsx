@@ -62,7 +62,7 @@ export const SectionId = {
   Testimonials: 'testimonials',
 } as const;
 
-export type SectionId = typeof SectionId[keyof typeof SectionId];
+export type SectionId = (typeof SectionId)[keyof typeof SectionId];
 
 /**
  * Hero section
@@ -73,20 +73,19 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm an Atlanta based <strong className="text-stone-100">DevOps Engineer</strong>, currently exploring the realm of
-        <strong className="text-stone-100">cloud technology</strong> investigating the topics of <i className="text-stone-100">
-        development operations, artificial intelligence, machine learning, and networking</i>.
-      </p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time time, you can catch me enjoying some sunset <strong className="text-stone-100">yoga</strong>,
-        hangout with my dog <strong className="text-stone-100">Sammantha</strong>, or exploring beautiful{' '}
-        <strong className="text-stone-100">hiking trails</strong>.
+        I'm an Atlanta based <strong className="text-stone-100">DevOps Engineer</strong>, currently exploring the realm
+        of<strong className="text-stone-100"> cloud technology</strong> investigating the topics of{' '}
+        <i className="text-stone-100">
+          {' '}
+          development operations, artificial intelligence, machine learning, and networking
+        </i>
+        .
       </p>
     </>
   ),
   actions: [
     {
-      href: '/assets/resume.pdf',
+      href: '',
       text: 'Resume',
       primary: true,
       Icon: ArrowDownTrayIcon,
@@ -104,16 +103,12 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Use this bio section as your way of describing yourself and saying what you do, what technologies you like
-  to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing
-  in.`,
+  description: `In my free time, you cn catch me enjoying some sunset yoga, hanging out with my dog, or exploring beautiful hiking trails.`,
   aboutItems: [
-    {label: 'Location', text: 'Victoria, BC', Icon: MapIcon},
-    {label: 'Age', text: '29', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'Canadian / Irish', Icon: FlagIcon},
-    {label: 'Interests', text: 'Motorcycles, Muay Thai, Banjos', Icon: SparklesIcon},
-    {label: 'Study', text: 'University of Victoria', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Instant Domains, inc.', Icon: BuildingOffice2Icon},
+    {label: 'Location', text: 'Atlanta, GA', Icon: MapIcon},
+    {label: 'Interests', text: 'Coding, Yoga, Hiking, Problem Solving', Icon: SparklesIcon},
+    {label: 'Study', text: 'Florida A&M University, Clark Atlanta University, Emory University', Icon: AcademicCapIcon},
+    {label: 'Employment', text: 'Open to Work', Icon: BuildingOffice2Icon},
   ],
 };
 
@@ -122,14 +117,14 @@ export const aboutData: About = {
  */
 export const skills: SkillGroup[] = [
   {
-    name: 'Spoken languages',
+    name: 'Proficient',
     skills: [
       {
-        name: 'English',
+        name: 'AWS Services',
         level: 10,
       },
       {
-        name: 'French',
+        name: 'Python',
         level: 4,
       },
       {
@@ -196,12 +191,12 @@ export const skills: SkillGroup[] = [
  */
 export const portfolioItems: PortfolioItem[] = [
   {
-    title: 'Project title 1',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
+    title: 'The Volunteers',
+    description: 'Develop a Scholar-Tutor Matching Website built with Django and hosted on AWS Elastic Beanstalk.',
+    url: 'https://github.com/blessedtruth',
     image: porfolioImage1,
   },
-  {
+  /*  {
     title: 'Project title 2',
     description: 'Give a short description of your project here.',
     url: 'https://timbaker.me',
@@ -260,7 +255,7 @@ export const portfolioItems: PortfolioItem[] = [
     description: 'Give a short description of your project here.',
     url: 'https://timbaker.me',
     image: porfolioImage11,
-  },
+  },*/
 ];
 
 /**
@@ -268,39 +263,65 @@ export const portfolioItems: PortfolioItem[] = [
  */
 export const education: TimelineItem[] = [
   {
-    date: 'April 2007',
-    location: 'Clown college',
-    title: 'Masters in Beer tasting',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: 'June 2023',
+    location: 'Emory University',
+    title: 'Developement Operations Certification',
+    content: <p></p>,
   },
   {
-    date: 'March 2003',
-    location: 'School of Business',
-    title: 'What did you study 101',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: 'May 2006',
+    location: 'Clark Atlanta University',
+    title: 'M.A.T. Secondary Mathematics',
+    content: <p></p>,
+  },
+  {
+    date: 'May 2003',
+    location: 'Florida A&M University',
+    title: 'Mathematical Sciences',
+    content: <p></p>,
   },
 ];
 
 export const experience: TimelineItem[] = [
   {
-    date: 'March 2010 - Present',
-    location: 'Awesome Development Company',
-    title: 'Senior UX Engineer',
+    date: 'November 2022 - June 2023',
+    location: 'Emory "Fullstack" University',
+    title: 'Development Operations Engineer Apprentice',
     content: (
       <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
+        Developed CI/CD pipelines to facilitate proficient Data Flow, Use of AWS Services and Django to create a
+        tutor-scholar matching service, Utilize IaC tools (Terraform/CloudFormation), Analysis of complex scenarios for
+        identification and troubleshooting, Use of logical reasoning and critical thinking to resolve issues in
+        conducting DevOps Functions based on Projects, Attention to detail and precision, and Ability to innovate to
+        receive consistent, verified, and improved results.
       </p>
     ),
   },
   {
-    date: 'March 2007 - February 2010',
-    location: 'Garage Startup Studio',
-    title: 'Junior bug fixer',
+    date: 'Summer 2018, 2020 - 2023',
+    location: 'SMASH, A program of the KAPOR Center',
+    title: 'Computer Science Workshop Facilitator',
     content: (
       <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
+        Facilitated both a beginner and an intermediate Python course for 1st and 4th-year scholars. Ensured that
+        scholars understood and could manipulate the required or recommended technological tools needed to ensure their
+        culminating project's completion and success. Promoted positive, productive, and supportive team-based
+        interactions among scholars and staff.
+      </p>
+    ),
+  },
+  {
+    date: 'January 2014 - May 2023',
+    location: 'Dekalb County School System',
+    title: 'Mathematics Educator',
+    content: (
+      <p>
+        Instrumental in increasing Academe for the State of Georgia's End Of Course Test scores each year reaching a 96%
+        pass rate in 2015. Developed and implemented multiple strategies to enhance and encourage student learning
+        during distance learning. Taught AP Computer Science through the use of differentiated strategies and positive
+        reinforcement. Served the community through various tutorial programs and reach-out initiatives. Utilized
+        assorted technologies in the classroom for both demonstrative and assessment purposes. Recognized as Teacher of
+        the Month in 2017, 2018, and 2020.
       </p>
     ),
   },
@@ -313,19 +334,21 @@ export const testimonial: TestimonialSection = {
   imageSrc: testimonialImage,
   testimonials: [
     {
-      name: 'John Doe',
-      text: 'Use this as an opportunity to promote what it is like to work with you. High value testimonials include ones from current or past co-workers, managers, or from happy clients.',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/169.jpg',
+      name: 'Kelsey Carnosso',
+      text: 'Christina and I worked closely together on the Cardiology unit for Epic ClinDoc. She is an efficient resource for ClinDoc and Ambulatory. Christina has a calm demeanor and approches all situations with a level head. She is willing to learn and learns quickly. Christina was a pleasure to work with and I highly recommend her.',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/2/2e/LCML_Handshake_from_logo.png',
     },
     {
-      name: 'Jane Doe',
-      text: 'Here you should write some nice things that someone has said about you. Encourage them to be specific and include important details (notes about a project you were on together, impressive quality produced, etc).',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/14.jpg',
+      name: 'Zaha Mustafa',
+      text: 'It has been a pleasure being Christina Team Lead at Wake Forest Babtist Medical Center. She presented effective skills throughout the implementation and provided excellent support for the end users in her unit.',
+      image:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Helping_Hands.jpg/675px-Helping_Hands.jpg?20211226090752',
     },
     {
-      name: 'Someone else',
-      text: 'Add several of these, and keep them as fresh as possible, but be sure to focus on quality testimonials with strong highlights of your skills/work ethic.',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/69.jpg',
+      name: 'Alan Sarbin',
+      text: 'I was happy to be working with Christina because she is a very smart lady and caught on to the Epic Ambulatory software very well. I often asked her questions, most of which she could answer right away. When she did not know a "How to" answer she used the test system to try and figure it out, which she usually succeeded in doing. The providers seemed to like Christina as well. She was a good partner and I hope we get a chance to work together again.',
+      image:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/2014-365-326_Have_a_Smile_Day_%2815856235002%29.jpg/1200px-2014-365-326_Have_a_Smile_Day_%2815856235002%29.jpg?20170310132125',
     },
   ],
 };
@@ -335,28 +358,29 @@ export const testimonial: TestimonialSection = {
  */
 
 export const contact: ContactSection = {
-  headerText: 'Get in touch.',
-  description: 'Here is a good spot for a message to your readers to let them know how best to reach out to you.',
+  headerText: 'Connect with me.',
+  description:
+    'Feel free to reach out with any opportunities, projects, or questions. I look forward to hearing from you!',
   items: [
     {
       type: ContactType.Email,
-      text: 'reachout@timbaker.me',
-      href: 'mailto:reachout@timbaker.me',
+      text: 'cjm4jm@gmail.com',
+      href: 'mailto:cjm4jm@gmail.com',
     },
     {
       type: ContactType.Location,
-      text: 'Victoria BC, Canada',
-      href: 'https://www.google.ca/maps/place/Victoria,+BC/@48.4262362,-123.376775,14z',
+      text: 'Atlanta, GA',
+      href: 'https://earth.google.com/web/@33.7677129,-84.42060395,271.19416569a,77300.7668093d,35y,0.00422481h,60t,0r/data=CkoaSBJCCiUweDg4ZjUwNDVkNjk5MzA5OGQ6MHg2NmZlZGUyZjk5MGI2MzBiGV7tzRTf30BAIRzbIbTUGFXAKgdBdGxhbnRhGAIgASgC',
     },
     {
-      type: ContactType.Instagram,
-      text: '@tbakerx',
-      href: 'https://www.instagram.com/tbakerx/',
+      type: ContactType.LinkedIn,
+      text: 'c-meekins',
+      href: 'https://www.linkedin.com/in/c-meekins/',
     },
     {
       type: ContactType.Github,
-      text: 'tbakerx',
-      href: 'https://github.com/tbakerx',
+      text: 'blessedtruth',
+      href: 'https://github.com/blessedtruth',
     },
   ],
 };
@@ -365,9 +389,6 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/tbakerx'},
-  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/timbakerx/'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/tbakerx/'},
-  {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},
+  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/blessedtruth'},
+  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/c-meekins/'},
 ];
